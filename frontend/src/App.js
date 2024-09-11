@@ -1,45 +1,46 @@
+import React, { useMemo, useState } from 'react';
 import bg from './img/bg.png';
 import { MainLayout } from './styles/Layouts.js';
 import Orb from './components/Orb/orb.js';
 import Navigation from './components/Navigation/Navigation.js';
-import React, { useMemo, useState } from 'react';
 import Dashboard from './components/Dashboard/Dashboard.js';
 import Incomes from './components/Incomes/Incomes.js';
 import Expenses from './components/Expenses/Expenses.js';
+import LandingPage from './components/LandingPage/LandingPage.js'; // Import LandingPage
 import { useGlobalContext } from './context/Globalcontext.js';
 import styled from 'styled-components';
 
-
 function App() {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0); // Default to landing page
 
-
-  const global = useGlobalContext()
+  const global = useGlobalContext();
   console.log(global);
-  const displayData= () => {
+
+  const displayData = () => {
     switch(active){
       case 1:
-        return <Dashboard/>
       case 2:
-        return <Dashboard/>
+        return <Dashboard />;
       case 3:
-        return <Incomes/>
+        return <Incomes />;
       case 4:
-        return <Expenses/>
+        return <Expenses />;
       default:
-      return <Dashboard/>
+        return <LandingPage setActive={setActive} />; // LandingPage displayed initially
     }
-  } 
-  const orbMemo = useMemo(()=> {
-  return <Orb/>
-},[])
+  };
+
+  const orbMemo = useMemo(() => {
+    return <Orb />;
+  }, []);
+
   return (
     <AppStyled $bg={bg} className='App'>
       {orbMemo}
       <MainLayout>
-        <Navigation active={active} setActive={setActive} />
+        {active !== 0 && <Navigation active={active} setActive={setActive} />} {/* Hide Navigation on landing page */}
         <main>
-        {displayData()}
+          {displayData()}
         </main>
       </MainLayout>
     </AppStyled>
@@ -51,17 +52,18 @@ const AppStyled = styled.div`
   background: url(${props => props.$bg}) no-repeat center center fixed;
   background-size: cover;
   position: relative;
-main{
-  flex: 1;
-  background: rgba(252, 246, 249, 0.78);
-  border: 3px solid #FFFFFFF;
-  backdrop-filter: blur(4.5px);
-  border-radius: 32px;
-  overflow-x: hidden;
-  &::-webkit-scrollbar{
-     width: 100%;
+
+  main {
+    flex: 1;
+    background: rgba(252, 246, 249, 0.78);
+    border: 3px solid #FFFFFFF;
+    backdrop-filter: blur(4.5px);
+    border-radius: 32px;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 100%;
+    }
   }
-}
 `;
 
 export default App;
