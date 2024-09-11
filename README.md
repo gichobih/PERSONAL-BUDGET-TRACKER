@@ -1,60 +1,60 @@
-####User magement
+#### User magement
 
-##POST   ‘/api/ register ’
+## POST   ‘/api/ register ’
 Register a new user account and respond with a confirmation of successful registration or error message.
 
-##POST  ‘/api/ login’
+## POST  ‘/api/ login’
 Log in an existing user and respond with authentication token and user information.
 
-##GET  ‘ /api/ logout ’
+## GET  ‘ /api/ logout ’
 Log out the current user and respond with confirmation of successful logout.
 
 #### Income Management
 
-##POST  ‘ /api/ income’
+## POST  ‘ /api/ income’
 Add a new income entry and respond with confirmation of the income entry being saved.
 
-##GET  ‘/api/ income’
+## GET  ‘/api/ income’
  Retrieve all income entries for the logged-in user and respond with a list of all income entries with details.
 
-##DELETE  ‘/api/income:id ’
+## DELETE  ‘/api/income:id ’
 Delete a specific income entry by its ID and respond with confirmation of successful deletion.
 
 #### Expense Management
 
-##POST  ‘/api/expenses’
+## POST  ‘/api/expenses’
 Log a new expense and respond with confirmation of the expense entry being saved.
 
-##GET  ‘/api/expenses’
+## GET  ‘/api/expenses’
 Retrieve all expenses for the logged-in user and respond with a list of all expense entries with details.
 
-##DELETE ‘/api/expenses/ :id’
+## DELETE ‘/api/expenses/ :id’
 Delete a specific expense entry by its ID and respond with confirmation of successful deletion.
 
-####Savings Goals Management
+#### Savings Goals Management
 
-##POST  ‘/api/savings ’
+## POST  ‘/api/savings ’
 Create a new savings goal and respond with a confirmation of the new saving goal being created .
 
-##GET  ‘/api/savings’
+## GET  ‘/api/savings’
 Retrieve all savings goals for the logged-in user and respond with a list of all savings goals with details.
 
-##PATCH  ‘/api/savings/ :id’
+## PATCH  ‘/api/savings/ :id’
 Update a specific savings goal by its ID and respond with a confirmation of the savings goal being updated.
 
-##DELETE  ‘/api/savings/ :id’
+## DELETE  ‘/api/savings/ :id’
 Delete a specific savings goal by its ID and respond with a confirmation of successful deletion.
 
-####Reports and Analytics
+#### Reports and Analytics
 
-##GET ‘/api/reports/ income vs expenses’
+## GET ‘/api/reports/ income vs expenses’
 Generate a report comparing income vs. expenses for a specific period and respond with a summary of income vs. expenses within the specified period.
 
-##GET ‘/api/reports/ category-summary’
+## GET ‘/api/reports/ category-summary’
 Get a summary of expenses by category and respond with a breakdown of expenses by category with total amounts.
 These API routes will allow the web client to perform all necessary operations, from managing user accounts to logging financial data and generating reports. Each route is designed to be secure, efficient, and user-friendly.
 
-####User Stories
+#### User Stories
 The following user stories define the key features that will be satisfied when the Personal Budget Tracker MVP is complete. Each story is designed to focus on the specific needs of the user, ensuring that the application delivers value and meets user expectations.
 
 ## User Registration and Login
@@ -78,7 +78,7 @@ The user should be able to input the amount, category, and date of the expense.
 The system should allow the user to select from predefined categories (e.g., Food, Transportation).
 The expense entry should be saved and reflected in the user’s expense summary.
 
-##Setting Savings Goals
+## Setting Savings Goals
 Story: As a user, I want to set and track savings goals so that I can work towards specific financial objectives.
 Acceptance Criteria:
 The user should be able to create a new savings goal with a target amount, description, and deadline.

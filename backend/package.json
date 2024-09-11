@@ -1,18 +1,25 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description":"",
+  "description": "Backend API for personal budget tracker application",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "author": "",
+  "author": "dennis",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.5.4",
+    "mongoose": "^8.5.4"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }
